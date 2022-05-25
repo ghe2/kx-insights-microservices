@@ -109,6 +109,69 @@ tables:
        - name: exchange
          description: exchange
          type: symbol
+
+rawbinance:
+     description: rawbinance
+     type: partitioned
+     blockSize: 1000
+     prtnCol: time
+     sortColsOrd: sym
+     sortColsDisk: sym
+     columns:
+       - name: time
+         description: Partitioned timestamp column
+         type: timestamp
+       - name: sym
+         description: sym
+         type: symbol
+         attrMem: grouped
+         attrDisk: parted
+         attrOrd: parted
+       - name: raw
+         description: raw
+         type:
+
+rawbybit:
+     description: rawbybit
+     type: partitioned
+     blockSize: 1000
+     prtnCol: time
+     sortColsOrd: sym
+     sortColsDisk: sym
+     columns:
+       - name: time
+         description: Partitioned timestamp column
+         type: timestamp
+       - name: sym
+         description: sym
+         type: symbol
+         attrMem: grouped
+         attrDisk: parted
+         attrOrd: parted
+       - name: raw
+         description: raw
+         type:
+
+rawcoinbase:
+     description: rawcoinbase
+     type: partitioned
+     blockSize: 1000
+     prtnCol: time
+     sortColsOrd: sym
+     sortColsDisk: sym
+     columns:
+       - name: time
+         description: Partitioned timestamp column
+         type: timestamp
+       - name: sym
+         description: sym
+         type: symbol
+         attrMem: grouped
+         attrDisk: parted
+         attrOrd: parted
+       - name: raw
+         description: raw
+         type:
        
   eth_txns_pending:
      description: Ethereum pending txns

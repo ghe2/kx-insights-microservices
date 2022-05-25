@@ -52,8 +52,8 @@ sleep 3
 cd kdb-tick
 #q feedhandler_ETH.q -env $1 &
 #q feedhandler_ETH.q -p 6003 -env $1 >> alchemy.log 2>&1 &
-#q feedhandler_allLevels.q -env $1 &
-q feedhandler_allExchanges.q -p 6001 -env $1 >> allExchanges.log 2>&1 &
+#q feedhandler_allLevels_new.q -env $1 &
+q feedhandler_gda.q -p 6001 -env $1 >> feedhandler_gda.log 2>&1 &
 ## Start the CTP GW for processes to query and subscribe to
 q ctp_gw.q crypto localhost:5010 -p 6005 -env crypto &
 
